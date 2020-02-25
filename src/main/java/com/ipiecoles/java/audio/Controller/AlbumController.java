@@ -41,14 +41,9 @@ public class AlbumController {
 	 @RequestMapping (method = RequestMethod.DELETE , value="/{id}")
 	 @ResponseStatus (HttpStatus.NO_CONTENT)
 	 public void deleteAlbum (@PathVariable ("id") Integer id ) {
-		 //Artiste artiste= this.findById(idArtiste);
-		 Set<Album> albums = albumRepository.findByArtistId(id);
-		 
-		for(Album album : albums){
-			 Integer idAlbum = album.getId();
-			albumRepository.deleteById(idAlbum);
+			albumRepository.deleteById(id);
 		}
 		
-	 };
+	
 	 
 }
